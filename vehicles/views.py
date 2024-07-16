@@ -1,6 +1,4 @@
 from django.shortcuts import render
-
-# Create your views here.
 from django.contrib.auth import views as auth_views
 from django.urls import reverse_lazy
 from django.views import generic
@@ -17,3 +15,6 @@ class RegisterView(generic.CreateView):
     success_url = reverse_lazy('login')
     template_name = 'vehicles/register.html'
 
+# Home view
+def home(request):
+    return render(request, 'vehicles/home.html')
